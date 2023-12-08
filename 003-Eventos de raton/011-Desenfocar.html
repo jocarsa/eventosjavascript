@@ -1,0 +1,19 @@
+<!doctype html>
+<html leng="es">
+    <head>
+        <title>Aprendiendo eventos en Javascript</title>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <input type="text" id="campo">
+        <script>
+            document.getElementById("campo").onfocus = function(e){
+                console.log("Has entrado");
+            }
+            document.getElementById("campo").onblur = function(e){
+                console.log("Has salido");
+            }
+        </script>
+    </body>
+</html>

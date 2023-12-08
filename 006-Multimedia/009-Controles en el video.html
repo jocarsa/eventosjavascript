@@ -1,0 +1,60 @@
+<!doctype html>
+<html leng="es">
+    <head>
+        <title>Aprendiendo eventos en Javascript</title>
+        <meta charset="utf-8">
+        <style>
+            #contenedorvideo{
+                width:1280px;
+                height:720px;
+                position:relative;
+            }
+            video{
+                position:absolute;
+                width:100%;
+                top:0px;
+                left:0px;
+            }
+        </style>
+    </head>
+    <body> 
+        <div id="contenedorvideo">
+            <video id="video" src="video.mp4"></video>
+            <div id="controles">
+                <button id="comenzar">Reproducir</button>
+                <button id="pausa">Pausar</button>
+                <button id="rebobina">Rebobinar</button>
+                <button id="avanza10">Avanza 10 fotogramas</button>
+                <button id="retrocede10">Retrocede 10 fotogramas</button>
+                <button id="volumen">Volumen</button>
+                <button id="silencio">Silencio</button>
+                <input type="range" id="controlvolumen" min=0.0 max=1.0 step=0.01>
+            </div>
+        </div>
+        <script>
+            
+            let video = document.getElementById("video")
+            document.getElementById("comenzar").onclick = function(){
+                video.play();
+            }
+            document.getElementById("pausa").onclick = function(){
+                video.pause();
+            }
+            document.getElementById("rebobina").onclick = function(){
+                video.currentTime = 0;
+            }
+            document.getElementById("avanza10").onclick = function(){
+                video.currentTime += 10;
+            }
+            document.getElementById("volumen").onclick = function(){
+                video.volume = 1
+            }
+            document.getElementById("silencio").onclick = function(){
+                video.volume = 0
+            }
+            document.getElementById("controlvolumen").onchange = function(){
+                video.volume = this.value
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html leng="es">
+    <head>
+        <title>Aprendiendo eventos en Javascript</title>
+        <meta charset="utf-8">
+        <style>
+            #arrastrable{
+                width:200px;
+                height:200px;
+                background:red;
+                color:white;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="arrastrable" draggable="true">
+            Hola Jose Vicente
+        </div>
+        <script>
+            document.getElementById("arrastrable").ondragstart = function(){
+                console.log("Lo estas comenzando a arrastrar");
+            }
+        </script>
+    </body>
+</html>

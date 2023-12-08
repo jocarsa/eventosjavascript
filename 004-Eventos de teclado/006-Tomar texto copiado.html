@@ -1,0 +1,20 @@
+<!doctype html>
+<html leng="es">
+    <head>
+        <title>Aprendiendo eventos en Javascript</title>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <textarea id="campo" rows=10 cols=20>
+            Este es un texto de muestra
+        </textarea>
+        <script>
+            document.getElementById("campo").oncopy = function(e){
+                console.log("Has copiado");
+                let textocopiado = window.getSelection().toString()
+                console.log(textocopiado)
+            }
+        </script>
+    </body>
+</html>

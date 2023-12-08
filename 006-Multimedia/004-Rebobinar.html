@@ -1,0 +1,26 @@
+<!doctype html>
+<html leng="es">
+    <head>
+        <title>Aprendiendo eventos en Javascript</title>
+        <meta charset="utf-8">
+    </head>
+    <body> 
+        <video id="video" src="video.mp4"></video>
+        <button id="comenzar">Reproducir</button>
+        <button id="pausa">Pausar</button>
+        <button id="rebobina">Rebobinar</button>
+        <script>
+            let video = document.getElementById("video")
+            document.getElementById("comenzar").onclick = function(){
+                video.play();
+            }
+            document.getElementById("pausa").onclick = function(){
+                video.pause();
+            }
+            document.getElementById("rebobina").onclick = function(){
+                video.currentTime = 0;
+            }
+            
+        </script>
+    </body>
+</html>

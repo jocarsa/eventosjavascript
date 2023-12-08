@@ -1,0 +1,75 @@
+<!doctype html>
+<html leng="es">
+    <head>
+        <title>Aprendiendo eventos en Javascript</title>
+        <meta charset="utf-8">
+        <style>
+            #contenedorvideo{
+                width:1280px;
+                height:720px;
+                position:relative;
+            }
+            video{
+                position:absolute;
+                width:100%;
+                top:0px;
+                left:0px;
+            }
+            #controles{
+                width:600px;
+                height:20px;
+                position:absolute;
+                bottom:10px;
+                left:50%;
+                margin-left:-300px;
+            }
+            button{
+                background:none;
+                border:none;
+                font-size:20px;
+            }
+        </style>
+    </head>
+    <body> 
+        <div id="contenedorvideo">
+            <video id="video" src="video.mp4"></video>
+            <div id="controles">
+                <button id="rebobina">⏮</button>
+                <button id="retrocede10">⏪</button>
+                <button id="comenzar">⏯</button>
+                <button id="pausa">⏯</button>
+                
+                <button id="avanza10">⏩</button>
+                
+                <button id="volumen">🔊</button>
+                <button id="silencio">🔇</button>
+                <input type="range" id="controlvolumen" min=0.0 max=1.0 step=0.01>
+            </div>
+        </div>
+        <script>
+            
+            let video = document.getElementById("video")
+            document.getElementById("comenzar").onclick = function(){
+                video.play();
+            }
+            document.getElementById("pausa").onclick = function(){
+                video.pause();
+            }
+            document.getElementById("rebobina").onclick = function(){
+                video.currentTime = 0;
+            }
+            document.getElementById("avanza10").onclick = function(){
+                video.currentTime += 10;
+            }
+            document.getElementById("volumen").onclick = function(){
+                video.volume = 1
+            }
+            document.getElementById("silencio").onclick = function(){
+                video.volume = 0
+            }
+            document.getElementById("controlvolumen").onchange = function(){
+                video.volume = this.value
+            }
+        </script>
+    </body>
+</html>

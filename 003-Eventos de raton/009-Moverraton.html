@@ -1,0 +1,21 @@
+<!doctype html>
+<html leng="es">
+    <head>
+        <title>Aprendiendo eventos en Javascript</title>
+        <meta charset="utf-8">
+        <style>
+            html,body{
+                width:100%;
+                height:100%;
+            }
+        </style>
+    </head>
+    <body id="cuerpo">
+        
+        <script>
+            document.getElementById("cuerpo").onmousemove = function(e){
+                console.log(e.pageX+","+e.pageY);
+            }
+        </script>
+    </body>
+</html>
